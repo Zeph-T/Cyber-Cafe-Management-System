@@ -1,0 +1,405 @@
+\documentclass[12pt]{article} 
+%\topmargin=-1in    
+\textheight=22cm  
+\oddsidemargin=1pt % leftmargin is 1 inch
+\textwidth=6.5in   % textwidth of 6.5in leaves 1 inch for right margin
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage[tight,footnotesize]{subfigure}
+\usepackage{eso-pic}
+\usepackage{float}
+\usepackage{blindtext}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{ucs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{color}
+\documentclass{article}
+\usepackage{minted}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+\usepackage{lettrine}
+\usepackage{enumerate}
+\usepackage{newlfont}
+\usepackage{minted}
+%\usepackage{subfig}
+%\usepackage[round]{natbib}
+
+\renewcommand{\labelitemi}{$\bullet$}
+\renewcommand{\labelitemii}{$\cdot$}
+\renewcommand{\labelitemiii}{$\diamond$}
+\renewcommand{\labelitemiv}{$\ast$}
+
+% for circle $\circ$
+% set margin -------------------------------------------------------------
+\oddsidemargin=-.1in
+\evensidemargin=.1in
+\textwidth=6.2in
+\topmargin=-.5in
+\textheight=9in
+%\parindent=0in
+%\pagestyle{plain}
+%\linespread{1.3}
+%% My definition
+%\newcommand{\mvec}[1]{\mbox{\bfseries\itshape #1}}
+
+% Line spacing -----------------------------------------------------------
+\newlength{\defbaselineskip}
+\setlength{\defbaselineskip}{\baselineskip}
+\newcommand{\setlinespacing}[1]%
+           {\setlength{\baselineskip}{#1 \defbaselineskip}}
+\newcommand{\doublespacing}{\setlength{\baselineskip}%
+                           {2.0 \defbaselineskip}}
+% Maths --------------------------------------------------------------------
+\newtheorem{lemma}{Lemma}
+\newtheorem{thm}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{corollary}{Corollary}
+\newtheorem{remark}{Remark}
+%\thispagestyle{empty}
+%--------------------------------------------------------------------------
+
+\begin{document}
+% Title page ---------------------------------------------------------------
+\thispagestyle{empty}
+\begin{titlepage}
+\begin{center}
+{\Large \textbf{Cyber Cafe Management System in C++}}\\[1.2cm]
+%\textbf{\LARGE  Resilience Metrics of Wireless Sensor Network} \\
+\end{center}
+\begin{center}
+%\vspace{0.2in}
+%{\large Dissertation} \\
+\vspace{0.1in}
+{\Large \it FINAL REPORT} \\
+\vspace{0.3in}
+{\Large \bf OOPS MAJOR PROJECT} \\
+November 2020\\
+%\vspace{0.3in}
+%{\large \it in\\}
+%\vspace{0.3in}
+%{\Large \bf CSE (Specialization)} \\
+\vspace{0.3in}
+{\large \it by\\}
+\vspace{0.2in}
+{\Large \bf DASARI JAYANTH(2019BCS-016) }\\
+\vspace{0.2in}
+{\Large \bf THARI ZEPHANIAH(2019BCS-067)}\\
+\vspace{0.4in}
+{\large \it under the supervision of\\}
+\vspace{0.3in}
+{\Large \bf Dr. VINAL PATEL}\\
+\end {center}
+\vspace{0.2in}
+\begin{figure}[h]
+\centerline{\includegraphics[width=1.2in,height=1.6in]{iiitm}}
+\end{figure}
+\vspace{0.1in}
+\begin{center}
+{\Large \bf ABV-INDIAN INSTITUTE OF INFORMATION TECHNOLOGY AND MANAGEMENT\\
+GWALIOR-474 015\\}
+%\vspace{0.2in}
+%{\large \bf Aug-Sep, 2017}
+\end{center}
+\end{titlepage}
+% Synopsis main text -----------------------------------------------------------------
+\newpage
+\setcounter{page}{1}
+\setlinespacing{1}
+\begin{center}
+{\large \bf CANDIDATE'S DECLARATION}
+\end{center}
+I hereby certify that I have properly checked and verified all the items as prescribed in the check-list and ensure that my thesis/report is in proper format as specified in the guideline for thesis preparation. \\
+
+\noindent I also declare that the work containing in this report is our own work. I, understand that plagiarism is defined as any one or combination of the following:
+\begin{enumerate}
+\item To steal and pass off (the ideas or words of another) as one's own
+\item To use (another's production) without crediting the source
+\item To commit literary theft
+\item To present as new and original an idea or product derived from an existing source.
+\end{enumerate}
+I understand that plagiarism involves an intentional act by the plagiarist of using someone else`s work/ideas completely/partially and claiming authorship/originality of the work/ideas. Verbatim copy as well as close resemblance to some else`s work constitute plagiarism.\\
+
+
+\noindent I affirm that no portion of my work is plagiarized, and the experiments and results reported in the report/dissertation/thesis are not manipulated. In the event of a complaint of plagiarism and the manipulation of the experiments and results, I shall be fully responsible and answerable. My faculty supervisor(s) will not be responsible for the same.\vspace{1cm}\\
+
+Name: DASARI JAYANTH \\
+Roll No.: 2019BCS-016  \\
+Date: 13/11/2020   \\
+
+Name: THARI ZEPHANIAH \\
+Roll No.: 2019BCS-067  \\
+Date: 13/11/2020   \\
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Ack
+%\begin{center}
+%{\large \bf ACKNOWLEDGEMENT}
+%\end{center}
+%I am highly indebted to {\bf Supervisor name}, and obliged for giving me the autonomy of
+%functioning and experimenting with ideas. I would like to take this opportunity to express my profound gratitude to him
+%not only for his academic guidance but also for his personal interest in my report and constant support coupled with
+%confidence boosting and motivating sessions which proved very fruitful and were instrumental in infusing self-assurance
+%and trust within me. The nurturing and blossoming of the present work is mainly due to his valuable guidance,
+%suggestions, astute judgment, constructive criticism and an eye for perfection. My mentor always answered myriad of my
+%doubts with smiling graciousness and prodigious patience, never letting me feel that I am novices by always lending an
+%ear to my views, appreciating and improving them and by giving me a free hand in my report. It's only
+%because of his overwhelming interest and helpful attitude, the present work has attained the stage it has. \\
+%\\
+%Finally, I am grateful to our Institution and colleagues whose constant encouragement served to renew my spirit,
+%refocus my attention and energy and helped me in carrying out this work.\\ \\ \\ \\
+%\vspace{0.7in}
+%\textbf{Date:}
+%\hspace{3.8in}
+%\textbf{Candidate name}
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\topmargin=-1in    
+\textheight=24cm  
+\oddsidemargin=0pt % leftmargin is 1 inch
+\textwidth=6.5in   % textwidth of 6.5in leaves 1 inch for right margin
+
+\begin{center}
+{\large \bf ABSTRACT}
+\end{center}  
+
+This project is based on the working of Cyber Cafe Management activity which is
+involved in allotting various types of Management like keep the record of registered
+User and non registered user, updating the records. And deleting the records and
+also to generate their reports. The cyber cafe current maintains the records manually.
+All the working hours, user name and its addresses have to be maintained daily in
+the record book for further reference.
+\\ 
+This project has been undertaken to automate the Cyber Cafe Management. One
+entry should be made once and further the entries are fetched as required. This
+makes the system more efficient. The user can only login the system if they are
+authorized to do so.   \\
+\\ \\
+Cyber Cafe Management System” has been designed to exhibit the significant of an
+automated system, which is used to manage and store information about Cyber Cafe
+Management, using the facilities of C++.
+The project begins with the separate different topics as menu bar items. Each
+heading possesses a number of models as its menu items. The project provides a
+user-friendly environment revealing the functioning of each part of Cafe Management
+automating them, which the users are facing at different levels of management in any
+Cyber Cafe. In this project sincere efforts have been made to develop a simple and
+easy Computer Based Cyber Cafe Management. \\
+
+
+\\
+\\ \\ \\ \\
+The user is provided with remarkable facilities of adding, printing, saving, deleting,
+modifying, closing as well as editing the data that has been entered currently or in
+the past. 
+
+%{\it \textbf{ Keywords: Channel estimation, fast convergence, high energy efficiency, convex combination, set-membership, error bound.}}\\
+
+
+\clearpage
+\tableofcontents
+%\listoftables
+\newpage
+%\listoffigures
+%\listoftables
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+\begin{itemize}
+    \vspace{5mm}
+    \large \item The basic task of our software is to provide operators and customers with an accurate timing and billing information at any time. Cyber cafe management system keeps customer accounts, so that customers can log in on their own using username and password
+    \large \item The cyber cafe currently maintains the records manually. All the working hours, user names, and retain addresses daily in the record book for further reference. Due to the manual method, the processing is not up to the mark and prone to inefficiencies. Report generation is a very tedious and prone error procedure. 
+    \large \item We created an OOP(Object Oriented Programming) based cyber cafe management System, which will automate the whole Cyber Cafe Management.
+    \large \item Cyber Cafe Management System is a significant place for keeping member records as per I.T., And C++ with application development tools has made it relatively easier for computer professionals to build several projects.
+    \large \item Our software's primary task is to provide operators and customers with accurate timing and billing information at any time. Cybercafe management system keeps customer accounts so that customers can log in on their account using username and password.This will also help reduce most time spending on their written records to know the total customers visited any day and calculate profit.
+    \large \item One entry should be made once and further the entries are fetched as required. This makes the system more efficient. The user can only login the system if they are authorized to do so.
+    \large \item  The users of this system are required to feed up their own data giving up appropriate constraints to be able to manipulate the functioning of various highlights of the system.
+\end{itemize}
+\newpage
+\section{Salient Features}
+\vspace{5mm}
+ \large \begin{itemize}
+\item  Cyber Cafe Management System is dos Based Graphical software. 
+\item  Being of its ease of access and interface, this system can be used by any
+specialized or non-specialized users. 
+\item Addition, deletion, modification of member records, machine records and surfing
+records are easily maintained. 
+\item  Reduce time, money and efforts of doing the work. 
+\item  Provide better service and accurate information to the factory. 
+\item  Provide fast retrieval of information. 
+\item Restricts unauthorized persons from using important data. 
+\item Different pricing strategies for specialized and non-specialized Users based on the Level of Membership they avail.
+\item Deleting all the Customers History and Data after he/she completes his Session.
+\item Special Privileges include Reduced Charges on System Usage to Premium Users who had taken a Membership in Cafe.
+\end{itemize} \newpage
+\section{Basic Implementation}
+\vspace{2mm}
+The Initial Startup Screen will ask for the Admin-User Credentials which will then redirect to the Main Menu because the Cafe Sessions are only allotted by the Admin.
+\vspace{2mm}
+The Main Screen contains 3 Options
+\begin{enumerate}
+    \item Master Entry
+    \item Cafe Management
+    \item Exit
+\end{enumerate}
+\begin{enumerate}
+    \item \textbf{Master Entry :} This Contains all the Necessary Information of the Premium Members of the Cafe and all the Computer Details.
+    Also the functions which are used to
+    \begin{itemize}
+    \item Add New Members
+    \item Update Info
+    \item Delete Info
+    \item Membership Plan
+    \item etc
+    \end{itemize}
+    \item \textbf{Cafe Management : }This Contains the Whole Cafe Details like  the Non-premium/Premium Member Login/Logout Details and the Premium/Non-Premium Usage Charges.
+    \begin{itemize}
+        \item Booking(Login/Logout)
+        \item Charges
+        
+    \end{itemize}
+    
+    
+\end{enumerate}
+
+\newpage
+\section{Code Implementation}
+\vspace{3mm}
+\noindent To implement this Design we require 3 Classes with various Member Functions
+Classes include :
+\begin{itemize}
+    \item Member Entry
+    \item Computer Entry
+    \item Cyber Cafe
+\end{itemize}
+\vspace{3mm}
+     \begin{enumerate}
+        \item \textbf{Member Entry :}This Class include Various Member Functions and Data Members which involve creating Premium User Objects of Cyber Cafe using the concept of Inheritence.\\
+        The Member Entry Consists of Various options:
+        \begin{itemize}
+            \item  Add New Member
+            \item Display Members
+            \item Update Record
+            \item Delete Record
+            \item Search Record
+        \end{itemize}
+        \item \textbf{Computer Entry :}This Class include Functions which deal with the performance of the Computers .\\
+        The Computer Entry consists of Various options:
+        \begin{itemize}
+            \item Add New Computer
+            \item Display Computers
+            \item Update Record
+            \item Delete Record
+            \item Search Record
+        \end{itemize}
+        \item \textbf{Cyber Cafe :}This class deals with the Basic Tasks in the Software like to book a session,show fares,etc.
+        The Functions coming under this class are:
+        \begin{itemize}
+            \item Show Charges
+            \item Book Session
+            \item Close Sesssion
+            \item Renewal Account
+
+        \end{itemize}
+        
+
+        
+        
+        
+     \end{enumerate}
+    
+  
+     
+    
+\newpage
+\section{Cyber Cafe Management}
+\vspace{2.5cm}
+Management of Cyber Cafe Includes Booking the Sessions , Updating the Charges of the Sessions, Renewal of the Premium Accounts, and many more.
+\begin{enumerate}
+    \item \textbf{Booking :} Maintains the data about the member when he log in computers and what time spent on the particular machine\\
+    It covers the Following :
+    \begin{itemize}
+        \item Login
+        \item Logout
+    \end{itemize}
+    \vspace{1cm}
+    \item \textbf{Charges :}Contains the Information regarding the Charges applied to different membership schemes.
+    \begin{itemize}
+    \item Show Charges
+    \end{itemize}
+    \vspace{1cm}
+    \item \textbf{Renewal/Subscription : } maintains the renewal process of the registered members.Old member can take new membership after paying the membership fees or taking Subscription.Fresh members can also take subscription.
+\end{enumerate}
+
+\newpage
+\section{Screen Shots-1}
+\vspace{2cm}
+\includegraphics[width=\textwidth]{pic6}
+\includegraphics[width=\textwidth]{pic5}
+
+\newpage
+\section{Screen Shots-2}
+\vspace{2cm}
+
+\includegraphics[width=\textwidth]{pic4}
+\includegraphics[width=\textwidth]{pic3}
+
+\newpage
+\section{Screen Shots-3}
+\vspace{2cm}
+
+\includegraphics[width=\textwidth]{pic2}
+\includegraphics[width=\textwidth]{pic1}
+
+
+\begin{figure}[h]
+\end{figure}
+\newpage
+
+\section{Conclusion}
+\vspace{1cm}
+We conclude this report by saying that we i.e Dasari Jayanth\\(2019BCS-016) and Thari Zephaniah(2019BCS-067) had successfully completed our Major Project on Cyber-Cafe Management System implemented in C++.\\
+We learned the concepts of Object Oriented Programming and also learnt the Significance of OOPS in Modern Life.
+
+\vspace{2cm}
+\section{References}
+\vspace{1cm}
+
+\url{https://www.geeksforgeeks.org/object-oriented-programming-in-cpp/}
+\\ \\
+\url{https://www.tutorialspoint.com/cplusplus/cpp_object_oriented.htm}
+\\  \\ 
+\url{https://beginnersbook.com/2017/08/cpp-oops-concepts/}
+\\ \\
+\url{https://www.w3schools.com/cpp/cpp_oop.asp}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
+
